@@ -37,18 +37,29 @@
     });
     
     document.addEventListener('click', function handleClickOutsideBox(event) {
-          // 👇️ the element the user clicked
-        //   console.log('user clicked: ', box);
-          
-          const box = document.querySelectorAll('.open_sidebar');
+        const openSidebars = document.querySelectorAll('.open_sidebar');
+        
+        if (openSidebars.length > 0) {
+          // Check if the clicked element is a child of any open sidebar
+          let clickedInsideSidebar = false;
+          openSidebars.forEach(sidebar => {
+            if (sidebar.contains(event.target)) {
+              clickedInsideSidebar = true;
+            }
+          });
       
-        if (box.length>0&&!event.target.classList.contains('nav-link')&&!event.target.classList.contains('navbar')&&!event.target.classList.contains('sidebar')&&!event.target.classList.contains('navbar-nav')) {
-          box.forEach(item=>item.classList.remove('open_sidebar'));
+          // If the clicked element is not a child of any open sidebar, close all open sidebars
+          if (!clickedInsideSidebar && !event.target.classList.contains('nav-link') && !event.target.classList.contains('navbar') && !event.target.classList.contains('sidebar') && !event.target.classList.contains('navbar-nav')) {
+            openSidebars.forEach(sidebar => {
+              sidebar.classList.remove('open_sidebar');
+            });
+          }
         }
-           console.log('user clicked: ', event.target);
-
+      
+        // Log the clicked element
+        console.log('user clicked:', event.target);
       });
-
+      
     // Add slideDown animation to Bootstrap dropdown when expanding
     $('.dropdown').on('show.bs.dropdown', function() {
         $(this).find('.dropdown-menu').first().stop(true, true).slideDown();

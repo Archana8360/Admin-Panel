@@ -14,7 +14,6 @@
                         <div class="d-md-none front_logo">
                             <img src="<%= asset_path('logo.svg') %>" alt="Sbrigit" width="249"/>
                         </div>
-                        <form class="w-100" action="dashboard.html"> 
                             <div class="title_group text-left mb-4 pb-3"> 
                                 <h1 class="h1 mb-3">Forgot your password?</h1>
                             </div>
@@ -29,7 +28,6 @@
                                   <%=  f.submit "Submit", class: "py-md-3 w-100 btn btn-lg btn-primary", type: "submit" %>
                             </div>
 
-                        </form>
                     </div>
                     <%end%>
                 </div>
@@ -38,19 +36,6 @@
     </div>
     <!--  End Login Page -->
 
-    <!-- Script -->
-    <script>
-        function show() {
-            var a = document.getElementById("pwd");
-            var b = document.getElementById("EYE");
-            if (a.type == "password") {
-                a.type = "text";
-                b.src = "assets/img/icons/show_password.svg";
-            } else {
-                a.type = "password";
-                b.src = "assets/img/icons/hide_password.svg";
-            }
-        }
-    </script>
+    
 
 
