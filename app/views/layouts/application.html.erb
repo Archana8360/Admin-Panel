@@ -7,7 +7,22 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path('favicons/apple-touch-icon.png') %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path('favicons/favicon-32x32.png') %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path('favicons/favicon-16x16.png') %>">
+    <link rel="shortcut icon" type="image/x-icon" href="<%= asset_path('favicons/favicon.ico') %>">
+    <link rel="manifest" href="<%= asset_path('favicons/manifest.json') %>">
+    <meta name="msapplication-TileImage" content="<%= asset_path('favicons/mstile-150x150.png') %>">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="<%= asset_path('lib/bootstrap/css/bootstrap.min.css') %>" rel="stylesheet">
+
+
+    <!-- Template Stylesheet -->
+    <link href="<%= asset_path('style.css') %>" rel="stylesheet">
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>

@@ -1,0 +1,40 @@
+<!-- Sidebar Start -->
+
+<aside class="sidebar pb-3">
+            <button class="d-lg-none close_btn"><img src="<%= asset_path('icons/close_icon.svg') %>" alt="Close" width="30" /></button>
+            <nav class="navbar text-left">
+                <a href="<%= authenticated_root_path%>" class="navbar-brand my-4 pt-2 pb-4 m-auto text-center">
+                   <img src="<%= asset_path('logo.svg') %>" alt="Sbrigit" width="144" class="img-fluid" />
+                </a>
+
+                <ul class="navbar-nav w-100">
+                    <li><a href="<%= authenticated_root_path%>" class="nav-link"><i class="me-2"><img
+                                    src="<%= asset_path('icons/menu_icons/dashboard_icon.svg') %>" width="24" alt="" /></i> Dashboard </a></li>
+                     <li class="nav-item">
+                       <%= link_to news_path, class: "nav-link" do %>
+                        <i class="me-2">
+                            <%= image_tag("icons/menu_icons/retailor_icon.svg", width: 23) %>
+                        </i>
+                        News 
+                        <% end %>
+                    </li>
+                    <li><%= link_to project_path, class: "nav-link" do %>
+                        <i class="me-2">
+                            <%= image_tag("icons/menu_icons/driver_icon.svg", width: 23) %>
+                        </i>
+                        Project 
+                        <% end %>
+                    </li>
+                   
+                </ul>
+                 <div class="logout_menu">
+                   <%= link_to destroy_user_session_path, 'data-turbo-method': :delete, class: "nav-link" do %>
+                      <i class="me-2"><%= image_tag('icons/menu_icons/logout_icon.svg', width: '24', alt: 'Logout') %></i>
+                                   Log Out
+                     <% end %>
+                </div>
+               
+            </nav>
+
+        </aside>
+<!-- Sidebar End -->
