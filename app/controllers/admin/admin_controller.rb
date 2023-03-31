@@ -10,11 +10,12 @@ class Admin::AdminController < ApplicationController
   end
 
   def edit_profile
-    @profile = current_user.profile
+    @profile = current_user.profile || current_user.build_profile
   end
   
   def update_profile
-    @profile = current_user.profile
+    @profile = current_user.profile || current_user.build_profile
+    @profile.user_id = current_user.id # Set user_id based on current user
     if @profile.update(profile_params)
       redirect_to profile_path, notice: "Profile updated successfully."
     else
