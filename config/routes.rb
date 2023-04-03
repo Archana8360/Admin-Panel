@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
    # Singular resource for the Profile model
+
    get 'profile/edit', to: 'admin/admin#edit_profile', as: :edit_profile
    patch 'profile', to: 'admin/admin#update_profile', as: :profile
    get 'project' , to: 'admin/admin#project_management'

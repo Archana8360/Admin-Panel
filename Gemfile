@@ -44,7 +44,8 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.9'
 gem 'country_select', '~> 8.0'
 gem 'mailtrap', '~> 1.2'
-
+gem 'active_storage_validations', '~> 1.0', '>= 1.0.3'
+gem 'ruby-vips'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

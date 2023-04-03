@@ -15,9 +15,9 @@ class Admin::AdminController < ApplicationController
   
   def update_profile
     @profile = current_user.profile || current_user.build_profile
-    @profile.user_id = current_user.id
+    @profile.user_id = current_user.id 
     if @profile.update(profile_params)
-      redirect_to profile_path, notice: "Profile updated successfully."
+      redirect_to profile_path
     else
       render :edit_profile
     end

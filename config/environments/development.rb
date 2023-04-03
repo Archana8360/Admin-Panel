@@ -69,7 +69,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   # Raises error for missing translations.
-  # config.i18n.raise_on_missing_translations = true
+  config.i18n.raise_on_missing_translations = true
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
@@ -88,8 +88,8 @@ Rails.application.configure do
   config.host =  ENV['DATABASE_HOST'] 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :user_name => '17cfed7cd7d69b',
-  :password => '99953bb47d037e',
+  :user_name => 'd8e43b8b3fae96',
+  :password => '03f5caa5ace735',
   :address => 'sandbox.smtp.mailtrap.io',
   :domain => 'sandbox.smtp.mailtrap.io',
   :port => '2525',
