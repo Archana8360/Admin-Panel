@@ -21,32 +21,34 @@
                     <div class="d-flex flex-wrap justify-content-between align-items-center page-header">
                         <h1 class="h2 mb-2">Edit Profile</h1> 
                     </div>
-                      <%= form_for @profile, url: profile_path do |f| %>
+                      <%= form_for @profile, url: profile_path, method: :patch do |f| %>
+                      
+
                         <div class="form-group">
                             <%= f.label :first_name %>
-                            <%= f.text_field :first_name, class: "form-control" %>
+                            <%= f.text_field :first_name, class: "form-control" , required: true %>
                         </div>
                         <div class="form-group">
                             <%= f.label :last_name %>
-                            <%= f.text_field :last_name, class: "form-control" %>
+                            <%= f.text_field :last_name, class: "form-control", required: true %>
                         </div>
                         <div class="form-group">
                             <%= f.label :phone %>
-                            <%= f.text_field :phone, class: "form-control" %>
+                            <%= f.text_field :phone, class: "form-control", required: true %>
                         </div>
                         <div class="form-group">
                             <%= f.label :country %>
-                            <%= f.text_field :country, class: "form-control" %>
+                            <%= f.text_field :country, class: "form-control" , required: true%>
                         </div>
-                          <div>
-                            <%= f.label :Choose_image, style: "display: block" %>
-                            <%= f.file_field :image %>
-                        </div>
+                         <div>
+                      <%= f.label :image, 'Choose an image', style: "display: block" %>
+                      <%= f.file_field :image, onchange: "validateImage(event)" %>
+                      <span id="image-error" class="error-message" style="display: none"></span>
+                    </div>
+
                         <br/>
                         <%= f.submit "Save Changes", class: "btn btn-primary" %>
                         <% end %>
-
-
 
                 </div>
             </div>
@@ -56,9 +58,4 @@
         <!-- End Content  -->
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="<%= asset_path('main.js') %>"></script>
+    

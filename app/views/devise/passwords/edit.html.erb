@@ -24,14 +24,14 @@
                                 <div class="position-relative"><% if @minimum_password_length %>
                                   <em>(<%= @minimum_password_length %> characters minimum)</em><br />
                                 <% end %>
-                                    <%= f.password_field :password, autofocus: true , class: "form-control", placeholder: "Enter email", required: true %>
+                                    <%= f.password_field :password, autofocus: true , class: "form-control", placeholder: "Enter password", required: true %>
                                 </div>
                             </div>
                             
 
                             <div class="mb-4"> 
                                 <div class="position-relative">
-                                    <%= f.password_field :password_confirmation, autofocus: true , class: "form-control", placeholder: "Enter email", required: true %>
+                                    <%= f.password_field :password_confirmation, autofocus: true , class: "form-control", placeholder: "Enter password", required: true %>
                                 </div>
                             </div>
                             
@@ -47,6 +47,11 @@
             </div>            
         </div>
     </div>
+
+
+
+
+
     <!--  End Login Page -->
 
     <!-- Script -->

@@ -4,20 +4,28 @@
                     <img src="<%= asset_path('icons/hamburger_icon.svg') %>" alt="" width="30" />
                 </a>
 
-                <div class="d-none d-md-block title_hd">
-                    <span class="h6 mb-0 text-capitalize">Hello <%= current_user.profile.first_name %></span>
-                    <small class="d-block f-small text-mute"><%= Time.now.strftime('%A, %B %d, %Y %I:%M %p') %></small>
+               <div class="d-none d-md-block title_hd">
+                  <% if current_user && current_user.profile %>
+                    <span class="h6 mb-0 text-capitalize">Hello <%= current_user.profile.first_name.present? ? current_user.profile.first_name : 'Admin' %></span>
+                  <% else %>
+                    <span class="h6 mb-0 text-capitalize">Hello Admin</span>
+                  <% end %>
+                  <%# < class="d-block f-small text-mute"><%= Time.now.strftime('%A, %B %d, %Y %I:%M %p') %>
                 </div>
+
 
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item">
-                       <% if current_user.profile.image.present? %>
-                         <em class="me-2 avtar avtar-30 border-0"> <%= link_to image_tag(current_user.profile.image , alt:"" ,width:"30"), edit_profile_path%></em>
-                       <% else %>
-                         <%= link_to edit_profile_path do %>
+                      <% if current_user.profile.present? && current_user.profile.image.present? %>
+                      <em class="me-2 avtar avtar-30 border-0">
+                        <%= link_to image_tag(current_user.profile.image, alt: "", width: "30"), edit_profile_path %>
+                      </em>
+                    <% else %>
+                      <%= link_to edit_profile_path do %>
                            <em class="me-2 avtar avtar-30 border-0"><%= image_tag asset_path('profile.png', alt:"" ,width:"30") %></em>
                          <%end%>
-                       <% end %>
+                    <% end %>
+
 
 
 

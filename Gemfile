@@ -5,7 +5,7 @@ ruby "3.2.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
-
+gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development]
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -44,7 +44,8 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.9'
 gem 'country_select', '~> 8.0'
 gem 'mailtrap', '~> 1.2'
-
+gem 'active_storage_validations', '~> 1.0', '>= 1.0.3'
+gem 'ruby-vips'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

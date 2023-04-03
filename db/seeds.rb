@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user = User.create(email:"shobhit@gmail.com", password: "123456");
-profile = Profile.create(first_name:"shobhit",last_name:"pandey",country:
-    "india",phone:1234567890,user_id:1)
-    
+
+
+user = User.create(email:"admin.fian@mailinator.com", password: "12345678");    

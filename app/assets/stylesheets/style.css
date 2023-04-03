@@ -83,3 +83,26 @@
 .no_data_found_sec {min-height: calc(100vh - 250px);}
 .card-block .form-control-sm { font-weight: 600; background-color: var(--grey-color-100); border-radius: 10px; color: var(--black-color-800); border-color: var(--grey-color-900);}
 .card-block .form-control {background: var(--grey-color-100); min-height: 44px;}
+
+
+
+
+  .alert {
+    text-align: center;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+    padding: 1rem;
+  }
+  
+  .password-changed-notice {
+    text-align: center;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+    padding: 1rem;
+  }
+  #image-error {
+    color: red;
+  }
+  
