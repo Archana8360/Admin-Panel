@@ -17,7 +17,7 @@
 .login_bg { 
     padding: 35px;  
     background-color: var(--primary-color);
-    background-image: url(../login_layer.png);
+    background-image: asset-url('login_layer.png');
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 100%;

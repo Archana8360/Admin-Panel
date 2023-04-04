@@ -8,7 +8,7 @@ class Profile < ApplicationRecord
     validates :last_name, presence: true, format: { without: /\d/, message: "cannot contain numbers" }
     validates :first_name, presence: true, format: { without: /\d/, message: "cannot contain numbers" }
     validates :image, attached: true,
-    processable_image: true,
+    # processable_image: true,
     content_type: ['image/png', 'image/jpeg']
   end
   
