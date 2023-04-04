@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :users, :skip => [:registrations]
+  devise_for :users, :skip => [:registrations], controllers: { sessions: 'sessions' }
   devise_scope :user do
     authenticated :user do
       root 'admin/admin#dashboard', as: :authenticated_root
