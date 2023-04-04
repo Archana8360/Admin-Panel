@@ -84,6 +84,7 @@ var countryInput = $("#profile_country");
 var imageInput = $("#profile_image");
 
 // Add a blur event listener to the first name input element
+// Add a blur event listener to the first name input element
 firstNameInput.on("blur", function () {
   // Get the value of the first name input
   var firstName = firstNameInput.val().trim();
@@ -107,12 +108,19 @@ firstNameInput.on("blur", function () {
     firstNameInput.after(
       "<div class='invalid-feedback'>First name cannot be numeric</div>"
     );
+  } else if (/\d/.test(firstName) && /[a-zA-Z]/.test(firstName)) {
+    // Show an error message if the first name contains both characters and numbers
+    firstNameInput.addClass("is-invalid");
+    firstNameInput.after(
+      "<div class='invalid-feedback'>First name cannot contain both characters and numbers</div>"
+    );
   } else {
     // Remove any error messages
     firstNameInput.removeClass("is-invalid");
     firstNameInput.next(".invalid-feedback").remove();
   }
 });
+
 
 // Add a blur event listener to the last name input element
 lastNameInput.on("blur", function () {
@@ -137,6 +145,12 @@ lastNameInput.on("blur", function () {
     lastNameInput.addClass("is-invalid");
     lastNameInput.after(
       "<div class='invalid-feedback'>Last name cannot be numeric</div>"
+    );
+  } else if (/\d/.test(lastName) && /[a-zA-Z]/.test(lastName)) {
+    // Show an error message if the first name contains both characters and numbers
+    lastNameInput.addClass("is-invalid");
+    lastNameInput.after(
+      "<div class='invalid-feedback'>First name cannot contain both characters and numbers</div>"
     );
   }else {
     // Remove any error messages
@@ -191,3 +205,5 @@ function validateImage(event) {
     imageInput.value = ''; // Clear the file input
   }
 }
+
+
