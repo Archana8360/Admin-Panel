@@ -64,15 +64,7 @@
     console.log("user clicked:", event.target);
   });
 
-  // Add slideDown animation to Bootstrap dropdown when expanding
-  $(".dropdown").on("show.bs.dropdown", function () {
-    $(this).find(".dropdown-menu").first().stop(true, true).slideDown();
-  });
 
-  // Add slideUp animation to Bootstrap dropdown when collapsing.
-  $(".dropdown").on("hide.bs.dropdown", function () {
-    $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
-  });
 })(jQuery);
 
 
@@ -88,7 +80,6 @@
 var form = $("form");
 var firstNameInput = $("#profile_first_name");
 var lastNameInput = $("#profile_last_name");
-// var phoneInput = $("#profile_phone");
 var countryInput = $("#profile_country");
 var imageInput = $("#profile_image");
 
