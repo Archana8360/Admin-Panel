@@ -150,7 +150,7 @@ lastNameInput.on("blur", function () {
     // Show an error message if the first name contains both characters and numbers
     lastNameInput.addClass("is-invalid");
     lastNameInput.after(
-      "<div class='invalid-feedback'>First name cannot contain both characters and numbers</div>"
+      "<div class='invalid-feedback'>Last name cannot contain both characters and numbers</div>"
     );
   }else {
     // Remove any error messages
