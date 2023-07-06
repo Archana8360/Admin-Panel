@@ -70,12 +70,6 @@
 
 
 
-
-
-
-
-
-
 // Get the form and input elements
 var form = $("form");
 var firstNameInput = $("#profile_first_name");

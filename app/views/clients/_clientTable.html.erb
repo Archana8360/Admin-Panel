@@ -1,0 +1,16 @@
+<tr id="<%= dom_id client%>">
+    <td><%= client.first_name + " "+ client.last_name%></td>
+    <td><%= client.email%></td>
+    <% s_id = "status"+ client.id.to_s %>
+    <td id="<%=s_id%>" ><%= client.status == true ? 'Active' : 'Inactive'%></td>
+   <td style="text-align: center;"><% if client.status %>
+            <i class ="fa fa-lock-open text-decoration-none btn-click status-icon text-success" data-remote="true" id= "<%=client.id%>"></i>                            
+        <% else %>
+            <i class ="fa fa-lock text-decoration-none btn-click status-icon text-danger" data-remote="true" id= "<%=client.id%>"></i>                            <%# end %>
+        <% end %></td>
+    <td style="text-align: center;"><%= link_to "", client,class:"fa-regular fa-eye text-decoration-none" %></td>
+    <td style="text-align: center;"><%= link_to "",edit_client_path(client),class:"fa-solid fa-pencil text-decoration-none" %></td>
+    <td style="text-align: center;"><%= link_to "",client,data:{turbo_method: :delete,
+        turbo_confirm: 'Are you sure?'}, class: "fa-sharp fa-solid fa-trash"%></td>
+</tr>
+

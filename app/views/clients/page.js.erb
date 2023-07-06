@@ -1,0 +1,2 @@
+$("#datarecords").html(" <% @clients.each do |client|%><%= escape_javascript render  'clientTable', client: client %><% end %>");
+$("#container").html(" <%= escape_javascript render partial: 'pagination', locals: { pagination: @pagination } %>")

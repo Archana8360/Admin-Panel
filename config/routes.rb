@@ -1,5 +1,26 @@
 Rails.application.routes.draw do
+  resources :people do
+    patch :update_status, on: :member
+  end
+
+
+
+  resources :clients do
+    patch :update_status, on: :member
+  end
+
+  post 'clients/page', to: "clients#page"
+
+
+
+
   
+  get 'search',to: "clients#search"
+  post 'users/sort',to: "clients#sortusers"
+  post 'emails/sort',to: "clients#sortemails"
+  post 'status/sort',to: "clients#sortstatus"
+
+
   devise_for :users, :skip => [:registrations], controllers: { sessions: 'sessions' }
   devise_scope :user do
     authenticated :user do

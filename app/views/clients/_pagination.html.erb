@@ -1,0 +1,22 @@
+<div class ="links">
+  <% if  pagination.previous_page? %>
+    <a id = "first" data-val = "1">First</a>
+    <a id = "previous" data-val = "<%=pagination.previous_page%>">&#60; Previous</a>
+
+  <% else %>
+    <a>First</a>
+    <a>&#60; Previous</a>
+  <% end %>
+  <%= "Page #{pagination.page} of #{pagination.total_pages}" %>
+  <% if pagination.next_page? %>
+    <a id = "next" data-val = "<%=pagination.next_page%>">Next &#62;</a>
+    <a id = "last" data-val = "<%=pagination.total_pages%>">Last</a>
+
+  <% else %>
+    <a>Next &#62;</a>
+    <a>Last </a>
+  <% end %>
+</div>
+
+
+

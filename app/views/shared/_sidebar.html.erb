@@ -25,7 +25,24 @@
                         Project 
                         <% end %>
                     </li>
-                   
+                   <li class="nav-item">
+                       <%= link_to clients_path, data: { turbo: false }, class: "nav-link" do %>
+                        <i class="me-2">
+                            <%= image_tag("icons/menu_icons/retailor_icon.svg", width: 23) %>
+                        </i>
+                        User Management
+                        <% end %>
+                    </li>
+
+                    <li class="nav-item">
+                       <%= link_to people_path, class: "nav-link" do %>
+                        <i class="me-2">
+                            <%= image_tag("icons/menu_icons/retailor_icon.svg", width: 23) %>
+                        </i>
+                        Users
+                        <% end %>
+                    </li>
+
                 </ul>
                  <div class="logout_menu">
                    <%= link_to destroy_user_session_path, 'data-turbo-method': :delete, class: "nav-link" do %>

@@ -1,0 +1,16 @@
+var id = "#status" + "<%= params[:id]%>"
+var val = $(id).html();
+var iconId = "#" + "<%= params[:id]%>" + ".status-icon";
+
+
+if(val === 'Active'){
+    $(id).html("Inactive");
+    $(iconId).removeClass("fa-lock-open text-success").addClass("fa-lock text-danger");
+
+}
+else{
+    $(id).html("Active");
+    $(iconId).removeClass("fa-lock text-danger").addClass("fa-lock-open text-success");
+
+}
+

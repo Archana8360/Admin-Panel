@@ -1,0 +1,83 @@
+<p style="color: green"><%= notice %></p>
+
+
+
+    <div class="position-relative d-flex p-0" id="top">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-light position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <%= render partial: "shared/sidebar"%>
+
+        <!-- Content Start -->
+        <div class="content pb-3">
+            
+         <%= render partial: "shared/navbar" %>
+
+            <!-- Start Content -->
+          <!-- Start Content -->
+            <div class="container-fluid py-2 px-3 mt-3">
+                <div class="card-panel bg-white p-4 radius-10">
+
+                    <div class="d-flex flex-wrap justify-content-between align-items-center page-header">
+                        <h1 class="h2 mb-2">User Management</h1> 
+                    </div>
+                    
+
+                    <div id ="clients">
+                    <div class="card" >
+                      <div class="card-body">
+                        <table class="table  table-striped table-bordered table-hover">
+                          <div class="row m-3">
+                            <form class="m-4 mb-0">
+                              <div class="form-row">
+                              <div class="col m-4">
+                              <input class="form-control mr-sm-2" list="datalistOptions" id="search" placeholder="Type to search...">
+                             
+                              </div>
+                            
+                          </div>
+                        </form>
+
+                          
+                        </div>
+                        <br/>
+                        <thead class="thead-light">
+                            <th id = "sortItems">Name &nbsp;<i class="fa-sharp fa-solid fa-sort"></i></th>
+                            <th id = "sortEmails">Email &nbsp;<i class="fa-sharp fa-solid fa-sort"></i></th>
+                            <th id = "sortStatus">Status &nbsp;<i class="fa-sharp fa-solid fa-sort"></i></th>
+                            <th colspan ="4" style="text-align: center;">actions </th>
+
+                        </thead>
+                        <tbody id = "datarecords">  
+                                <% @clients.each do |client| %>
+                                  <%= render  "clientTable", client: client %>
+                                <% end %>      
+                        </tbody>
+                        </table>
+                        <br>
+
+                        <%= link_to "", new_client_path ,class:"fa-solid fa-user-plus"%>
+                        <br/>
+                        <br/>
+    
+                      </div>
+                    
+                         <div class="d-flex justify-content-center" id="container">
+                          <%= render partial: 'pagination', locals: { pagination: @pagination } %>
+                       </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </div>       
+        <!-- End Content  -->
+
+    </div>
+  

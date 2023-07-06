@@ -25,13 +25,15 @@
                             <div class="position-relative">
                                 <%= f.email_field :email, autofocus: true , class: "form-control", placeholder: "Enter email", required: true %>
                                 <div class="invalid-feedback" id="email-error"></div>
+
                             </div>
                         </div>
 
                         <div class="mb-4">
                             <div class="position-relative">
-                                <%= f.password_field :password,  autofocus: true ,class: "form-control",placeholder: "Password", required: true, id: "pwd" %>
+                                <%= f.password_field :password,class: "form-control",placeholder: "Password",required: true , id:"pwd" %>
                                 <div class="invalid-feedback" id="password-error"></div>
+
                                 <button type="button" class="show_hide_pwd" onclick="show()">
                                     <img src="<%= asset_path('icons/hide_password.svg') %>" id="EYE" width="16"/>
                                 </button>
@@ -55,6 +57,8 @@
             </div>
         </div>
     </div>
+    <script src="<%= asset_path('validate.js') %>"></script>
+
 
 <script>
 
